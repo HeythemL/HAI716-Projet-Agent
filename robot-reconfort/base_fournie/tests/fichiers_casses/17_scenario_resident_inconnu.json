@@ -1,0 +1,29 @@
+{
+  "format": "robot-reconfort/scenario",
+  "version": 1,
+  "nom": "scenario_01",
+  "carte": "appartement_01",
+  "armoire": "armoire_standard",
+  "demandes": [
+    {
+      "numero": 1,
+      "resident": "R99",
+      "message": "Je me sens tellement seule ce soir, personne n'est pass\u00e9."
+    },
+    {
+      "numero": 2,
+      "resident": "R2",
+      "message": "Je suis un peu inquiet, j'entends du bruit dans le couloir."
+    },
+    {
+      "numero": 3,
+      "resident": "R1",
+      "message": "Ce bouton est cass\u00e9, \u00e7a m'agace depuis hier."
+    },
+    {
+      "numero": 4,
+      "resident": "R2",
+      "message": "Ma fille a appel\u00e9, je suis vraiment heureux."
+    }
+  ]
+}

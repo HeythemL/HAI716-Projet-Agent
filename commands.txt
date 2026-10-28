@@ -1,0 +1,46 @@
+ COMMANDES
+===========
+
+0. SE PLACER DANS LE DOSSIER DU PROJET :
+   cd robot-reconfort/base_fournie
+
+
+1. LANCER LA SUITE DE TESTS (65 tests unitaires, logique et validation) :
+   python -m unittest discover -s tests
+
+
+2. LANCER LE ROBOT (SCENARIO 01) :
+   python agent.py cartes/appartement_01.json cartes/scenario_01.json donnees sorties/trace_01.json
+
+
+3. VERIFIER LA TRACE PRODUITE (GRADER / CORRECTEUR DE TRACE) :
+   python outils/verifier_trace.py cartes/appartement_01.json cartes/scenario_01.json donnees sorties/trace_01.json
+
+
+4. EXECUTER ET VERIFIER LES AUTRES SCENARIOS FOURNIS (02 A 05) :
+   # Scenario 02 :
+   python agent.py cartes/appartement_02.json cartes/scenario_02.json donnees sorties/trace_02.json
+   python outils/verifier_trace.py cartes/appartement_02.json cartes/scenario_02.json donnees sorties/trace_02.json
+
+   # Scenario 03 :
+   python agent.py cartes/appartement_03.json cartes/scenario_03.json donnees sorties/trace_03.json
+   python outils/verifier_trace.py cartes/appartement_03.json cartes/scenario_03.json donnees sorties/trace_03.json
+
+   # Scenario 04 :
+   python agent.py cartes/appartement_04.json cartes/scenario_04.json donnees sorties/trace_04.json
+   python outils/verifier_trace.py cartes/appartement_04.json cartes/scenario_04.json donnees sorties/trace_04.json
+
+   # Scenario 05 :
+   python agent.py cartes/appartement_05.json cartes/scenario_05.json donnees sorties/trace_05.json
+   python outils/verifier_trace.py cartes/appartement_05.json cartes/scenario_05.json donnees sorties/trace_05.json
+
+
+5. DEMONTRER LA VALIDATION DES FICHIERS CASSES (SECTION 5.6) :
+   # Exemple 1 : Scenario prevu pour une autre carte (echec propre code 1, pas de crash, pas de trace) :
+   python agent.py cartes/appartement_01.json tests/fichiers_casses/16_scenario_carte_incoherente.json donnees sorties/trace_invalide.json
+
+   # Exemple 2 : Carte avec coordonnees de robot hors de la grille :
+   python agent.py tests/fichiers_casses/10_carte_position_hors_grille.json cartes/scenario_01.json donnees sorties/trace_invalide.json
+
+   # Exemple 3 : Arguments manquants en ligne de commande (code 2 + message d'usage) :
+   python agent.py
